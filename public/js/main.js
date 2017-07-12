@@ -262,11 +262,14 @@ var deckOfCards = [
 ];
 
 var BlackJack = {
+  randomCards: [],
+  randomCardCounter: 0,
   userHand: 0,
   playerHand: 0,
   gameDealt: false,
   dealHand: function(){
     console.log("Hand Dealt!");
+    
   },
   // hit:
   // stand:
@@ -280,7 +283,14 @@ var AppHelpers = {
   getRandomCard: function(){
     var randomNumber = Math.floor(Math.random() * 52);
     var randomCard = deckOfCards[randomNumber];
-    console.log(randomCard);
+    // var randomCardType = deckOfCards[randomNumber].cardType;
+    // var randomCardSuite = deckOfCards[randomNumber].cardSuite;
+    //   if (randomCardType === "Jack" || randomCardType === "Queen" || randomCardType === "King") {
+    //     randomCardType = 10;
+    //   }
+    // var randomCardImage = deckOfCards[randomNumber].CardImage;
+    BlackJack.randomCards.push(randomCard);
+    console.log(BlackJack.randomCards);
   }
   // convertCardToValue: function
   //
