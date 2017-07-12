@@ -1,4 +1,3 @@
-window.onload = function(){
 var deckOfCards = [
   {
     cardType: 2,
@@ -278,7 +277,11 @@ var BlackJack = {
 
 };
 var AppHelpers = {
-  // getRandomCard: function
+  getRandomCard: function(){
+    var randomNumber = Math.floor(Math.random() * 52);
+    var randomCard = deckOfCards[randomNumber];
+    console.log(randomCard);
+  }
   // convertCardToValue: function
   //
 };
@@ -306,7 +309,7 @@ var AppController = {
 };
 
 //event listeners
-
+window.onload = function(){
   $('#deal_button').on('click', function(){
     console.log("Deal Button Clicked");
     AppController.handleDeal();
