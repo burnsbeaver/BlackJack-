@@ -259,5 +259,4 @@ var deckOfCards = [
     cardSuite: "Spades"
     CardImage:
   }
-
 ]
