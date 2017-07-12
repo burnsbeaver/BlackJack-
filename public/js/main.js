@@ -2,257 +2,257 @@ var deckOfCards = [
   {
     cardType: 2
     cardSuite: "Hearts"
-    CardImage:
+    CardImage: "images/2_of_hearts.svg"
   }
   {
     cardType: 3
     cardSuite: "Hearts"
-    CardImage:
+    CardImage: "images/3_of_hearts.svg"
   }
   {
     cardType: 4
     cardSuite: "Hearts"
-    CardImage:
+    CardImage: "images/4_of_hearts.svg"
   }
   {
     cardType: 5
     cardSuite: "Hearts"
-    CardImage:
+    CardImage: "images/5_of_hearts.svg"
   }
   {
     cardType: 6
     cardSuite: "Hearts"
-    CardImage:
+    CardImage: "images/6_of_hearts.svg"
   }
   {
     cardType: 7
     cardSuite: "Hearts"
-    CardImage:
+    CardImage: "images/7_of_hearts.svg"
   }
   {
     cardType: 8
     cardSuite: "Hearts"
-    CardImage:
+    CardImage: "images/8_of_hearts.svg"
   }
   {
     cardType: 9
     cardSuite: "Hearts"
-    CardImage:
+    CardImage: "images/9_of_hearts.svg"
   }
   {
     cardType: 10
     cardSuite: "Hearts"
-    CardImage:
+    CardImage: "images/10_of_hearts.svg"
   }
   {
     cardType: "Jack"
     cardSuite: "Hearts"
-    CardImage:
+    CardImage: "images/jack_of_hearts.svg"
   }
   {
     cardType: "Queen"
     cardSuite: "Hearts"
-    CardImage:
+    CardImage:"images/queen_of_hearts.svg"
   }
   {
     cardType: "King"
     cardSuite: "Hearts"
-    CardImage:
+    CardImage:"images/king_of_hearts.svg"
   }
   {
     cardType: "Ace"
     cardSuite: "Hearts"
-    CardImage:
+    CardImage: "images/ace_of_hearts.svg"
   }
   {
     cardType: 2
     cardSuite: "Diamonds"
-    CardImage:
+    CardImage: "images/2_of_diamonds.svg"
   }
   {
     cardType: 3
     cardSuite: "Diamonds"
-    CardImage:
+    CardImage:"images/3_of_diamonds.svg"
   }
   {
     cardType: 4
     cardSuite: "Diamonds"
-    CardImage:
+    CardImage:"images/4_of_diamonds.svg"
   }
   {
     cardType: 5
     cardSuite: "Diamonds"
-    CardImage:
+    CardImage:"images/5_of_diamonds.svg"
   }
   {
     cardType: 6
     cardSuite: "Diamonds"
-    CardImage:
+    CardImage:"images/6_of_diamonds.svg"
   }
   {
     cardType: 7
     cardSuite: "Diamonds"
-    CardImage:
+    CardImage:"images/7_of_diamonds.svg"
   }
   {
     cardType: 8
     cardSuite: "Diamonds"
-    CardImage:
+    CardImage:"images/8_of_diamonds.svg"
   }
   {
     cardType: 9
     cardSuite: "Diamonds"
-    CardImage:
+    CardImage:"images/9_of_diamonds.svg"
   }
   {
     cardType: 10
     cardSuite: "Diamonds"
-    CardImage:
+    CardImage:"images/10_of_diamonds.svg"
   }
   {
     cardType: "Jack"
     cardSuite: "Diamonds"
-    CardImage:
+    CardImage:"images/jack_of_diamonds.svg"
   }
   {
     cardType: "Queen"
     cardSuite: "Diamonds"
-    CardImage:
+    CardImage:"images/queen_of_diamonds.svg"
   }
   {
     cardType: "King"
     cardSuite: "Diamonds"
-    CardImage:
+    CardImage:"images/king_of_diamonds.svg"
   }
   {
     cardType: "Ace"
     cardSuite: "Diamonds"
-    CardImage:
+    CardImage:"images/ace_of_diamonds.svg"
   }
   {
     cardType: 2
     cardSuite: "Clubs"
-    CardImage:
+    CardImage:"images/2_of_clubs.svg"
   }
   {
     cardType: 3
     cardSuite: "Clubs"
-    CardImage:
+    CardImage:"images/3_of_clubs.svg"
   }
   {
     cardType: 4
     cardSuite: "Clubs"
-    CardImage:
+    CardImage:"images/4_of_clubs.svg"
   }
   {
     cardType: 5
     cardSuite: "Clubs"
-    CardImage:
+    CardImage:"images/5_of_clubs.svg"
   }
   {
     cardType: 6
     cardSuite: "Clubs"
-    CardImage:
+    CardImage:"images/6_of_clubs.svg"
   }
   {
     cardType: 7
     cardSuite: "Clubs"
-    CardImage:
+    CardImage:"images/7_of_clubs.svg"
   }
   {
     cardType: 8
     cardSuite: "Clubs"
-    CardImage:
+    CardImage:"images/8_of_clubs.svg"
   }
   {
     cardType: 9
     cardSuite: "Clubs"
-    CardImage:
+    CardImage:"images/9_of_clubs.svg"
   }
   {
     cardType: 10
     cardSuite: "Clubs"
-    CardImage:
+    CardImage:"images/10_of_clubs.svg"
   }
   {
     cardType: "Jack"
     cardSuite: "Clubs"
-    CardImage:
+    CardImage:"images/jack_of_clubs.svg"
   }
   {
     cardType: "Queen"
     cardSuite: "Clubs"
-    CardImage:
+    CardImage:"images/queen_of_clubs.svg"
   }
   {
     cardType: "King"
     cardSuite: "Clubs"
-    CardImage:
+    CardImage:"images/king_of_clubs.svg"
   }
   {
     cardType: "Ace"
     cardSuite: "Clubs"
-    CardImage:
+    CardImage:"images/ace_of_clubs.svg"
   }
   {
     cardType: 2
     cardSuite: "Spades"
-    CardImage:
+    CardImage:"images/2_of_spades.svg"
   }
   {
     cardType: 3
     cardSuite: "Spades"
-    CardImage:
+    CardImage:"images/3_of_spades.svg"
   }
   {
     cardType: 4
     cardSuite: "Spades"
-    CardImage:
+    CardImage:"images/4_of_spades.svg"
   }
   {
     cardType: 5
     cardSuite: "Spades"
-    CardImage:
+    CardImage:"images/5_of_spades.svg"
   }
   {
     cardType: 6
     cardSuite: "Spades"
-    CardImage:
+    CardImage:"images/6_of_spades.svg"
   }
   {
     cardType: 7
     cardSuite: "Spades"
-    CardImage:
+    CardImage:"images/7_of_spades.svg"
   }
   {
     cardType: 8
     cardSuite: "Spades"
-    CardImage:
+    CardImage:"images/8_of_spades.svg"
   }
   {
     cardType: 9
     cardSuite: "Spades"
-    CardImage:
+    CardImage:"images/9_of_spades.svg"
   }
   {
     cardType: 10
     cardSuite: "Spades"
-    CardImage:
+    CardImage:"images/10_of_spades.svg"
   }
   {
     cardType: "Jack"
     cardSuite: "Spades"
-    CardImage:
+    CardImage:"images/jack_of_spades.svg"
   }
   {
     cardType: "Queen"
     cardSuite: "Spades"
-    CardImage:
+    CardImage:"images/queen_of_spades.svg"
   }
   {
     cardType: "King"
     cardSuite: "Spades"
-    CardImage:
+    CardImage:"images/ace_of_spades.svg"
   }
   {
     cardType: "Ace"
