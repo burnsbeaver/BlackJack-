@@ -260,31 +260,63 @@ var deckOfCards = [
     cardSuite: "Spades",
     CardImage:"images/ace_of_spades.svg"
   }
-]
+];
+
+var BlackJack = {
+  userHand: 0,
+  playerHand: 0,
+  gameDealt: false,
+  dealHand: function(){
+    console.log("Hand Dealt!");
+  },
+  // hit:
+  // stand:
+  // check:
 
 
 
 
-
+};
+var AppHelpers = {
+  // getRandomCard: function
+  // convertCardToValue: function
+  //
+};
 
 var AppController = {
   //Functions that run from event listeners
+  handleDeal: function(){
+    console.log("I am handling the deal");
+    //Deal- if game is set to running, do nothing
+        //if game is not running, run BLACKJACK.DEAL function
+    if(BlackJack.gameDealt === false){
+      console.log("is the hand dealt?" + BlackJack.gameDealt);
+      BlackJack.gameDealt = true;
+      BlackJack.dealHand();
+      console.log("is the hand dealt?" + BlackJack.gameDealt);
+    }
+  }
 
-    //Deal- if game si
-}
+
+    //Hit- If game is not running, do nothing
+        //- if game is running- run BLACKJACK.HIT function
+
+    //stand- if game is not running, do nothing
+        //- if game is running- run BLACKJACK.
+};
 
 //event listeners
 
   $('#deal_button').on('click', function(){
     console.log("Deal Button Clicked");
-    AppController.Deal();
+    AppController.handleDeal();
   });
   $('#hit_button').on('click', function(){
     console.log("Hit Button Clicked");
     AppController.Hit();
   });
   $('#stand_button').on('click', function(){
-    console.log("Stay Button Clicked");
+    console.log("Stand Button Clicked");
     AppController.Stay();
   });
 };
