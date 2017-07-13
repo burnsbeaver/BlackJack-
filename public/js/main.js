@@ -342,27 +342,20 @@ var BlackJack = {
     BlackJack.checkForWin();
     console.log(BlackJack.dealerStage);
     while (BlackJack.dealerHand < 17) {
-      AppHelpers.getRandomCard();
+      setTimeout(AppHelpers.getRandomCard(), 1000);
       BlackJack.checkForWin();
     }
   },
   checkForBlackJack: function(){
     if (BlackJack.userHand === 21) {
-      //if user has 21 points
-        //alert(blackjack! User wins)
-      //if dealer has 21 points
-        //alert(Dealer has blackjack, you lose!)
       setTimeout(function(){ alert("BlackJack! You Win!"); }, 500);
     } else if (BlackJack.dealerHand === 21) {
       setTimeout(function(){ alert("Dealer has BlackJack, you lose."); }, 500);
     }
   },
   checkForWin: function() {
-    // checkForWin: Parameters(userHand, dealerhand)
-    // if User is > Dealer && user is less than 22
     if (BlackJack.userHand > BlackJack.dealerHand && BlackJack.userHand < 22 && BlackJack.dealerHand > 16) {
       setTimeout(function(){ alert("You Win!"); }, 500);
-      //alert user wins
     } else if (BlackJack.dealerHand > BlackJack.userHand && BlackJack.dealerHand > 16 && BlackJack.dealerHand < 22 && BlackJack.dealerStage === true) {
       setTimeout(function(){ alert("You Lose"); }, 500);
     } else if (BlackJack.dealerHand === BlackJack.userHand && BlackJack.dealerHand > 16) {
@@ -370,8 +363,14 @@ var BlackJack = {
     } else if(BlackJack.dealerHand > 21 && BlackJack.userHand < 22){
       setTimeout(function(){ alert("Dealer busted, you win!"); }, 500);
     }
+  },
+  reset: function(){
+    BlackJack.userHand = 0;
+    BlackJack.dealerHand = 0;
+    BlackJack.gameDealt = false;
+    BlackJack.dealerStage = false;
+    $( ".card").remove();
   }
-
 
 };
 var AppHelpers = {
@@ -382,35 +381,24 @@ var AppHelpers = {
       BlackJack.userRandomCards.push(randomCard);
       BlackJack.userHand += randomCard.cardValue;
       $("#usercards").append(`<img class='card' src='${randomCard.cardImage}'/>`);
-      console.log(BlackJack.userRandomCards);
     } else if (BlackJack.dealerStage === true) {
       BlackJack.dealerRandomCards.push(randomCard);
       BlackJack.dealerHand += randomCard.cardValue;
       $("#dealercards").append(`<img class='card' src='${randomCard.cardImage}'/>`);
-      console.log(BlackJack.dealerRandomCards);
     }
 
   }
 };
 
 var AppController = {
-  //Functions that run from event listeners
   handleDeal: function(){
-    console.log("I am handling the deal");
-    //Deal- if game is set to running, do nothing
-        //if game is not running, run BLACKJACK.DEAL function
     if(BlackJack.gameDealt === false){
-      console.log("is the hand dealt?" + BlackJack.gameDealt);
       BlackJack.gameDealt = true;
       BlackJack.dealHand();
-      console.log("is the hand dealt?" + BlackJack.gameDealt);
     }
   },
 
   handleHit: function(){
-    //Hit- If game is not running, do nothing
-        //- if game is running- run BLACKJACK.HIT function
-    console.log("I am handling the Hit!");
     if (BlackJack.gameDealt === true && BlackJack.dealerStage === false) {
       BlackJack.hit();
     }
@@ -419,24 +407,25 @@ var AppController = {
     if (BlackJack.gameDealt === true && BlackJack.dealerStage === false) {
       BlackJack.stand();
     }
+  },
+  handleReset: function(){
+    console.log("Reset works");
+    BlackJack.reset();
   }
-    //stand- if game is not running, do nothing
-        //- if game is running- run BLACKJACK.stand
-        //CHANGE DEALER STAGE
 };
 
 //event listeners
 window.onload = function(){
   $('#deal_button').on('click', function(){
-    console.log("Deal Button Clicked");
     AppController.handleDeal();
   });
   $('#hit_button').on('click', function(){
-    console.log("Hit Button Clicked");
     AppController.handleHit();
   });
   $('#stand_button').on('click', function(){
-    console.log("Stand Button Clicked");
     AppController.handleStand();
+  });
+  $('#reset_button').on('click', function(){
+    AppController.handleReset();
   });
 };
