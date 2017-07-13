@@ -315,10 +315,8 @@ var deckOfCards = [
 
 var BlackJack = {
   userRandomCards: [],
-  userRandomCardCounter: 0,
   userHand: 0,
   dealerRandomCards: [],
-  dealerRandomCardCounter: 0,
   dealerHand: 0,
   gameDealt: false,
   dealerStage: false,
@@ -332,9 +330,22 @@ var BlackJack = {
     BlackJack.dealerStage = false;
     BlackJack.checkForBlackJack();
   },
-  // hit:
-  // stand:
-  // checkForBlackJack
+  hit: function(){
+    AppHelpers.getRandomCard();
+    BlackJack.checkForWin();
+    if (BlackJack.userHand > 21) {
+      setTimeout(function(){alert("Busted! You lose."); }, 500);
+    }
+  },
+  stand: function(){
+    BlackJack.dealerStage = true;
+    BlackJack.checkForWin();
+    console.log(BlackJack.dealerStage);
+    while (BlackJack.dealerHand < 17) {
+      AppHelpers.getRandomCard();
+      BlackJack.checkForWin();
+    }
+  },
   checkForBlackJack: function(){
     if (BlackJack.userHand === 21) {
       //if user has 21 points
@@ -349,18 +360,16 @@ var BlackJack = {
   checkForWin: function() {
     // checkForWin: Parameters(userHand, dealerhand)
     // if User is > Dealer && user is less than 22
-    if (BlackJack.userHand > BlackJack.dealerHand && BlackJack.userhand < 22) {
-      alert("You win!");
+    if (BlackJack.userHand > BlackJack.dealerHand && BlackJack.userHand < 22 && BlackJack.dealerHand > 16) {
+      setTimeout(function(){ alert("You Win!"); }, 500);
       //alert user wins
-    } else if (BlackJack.dealerHand > BlackJack.userHand && BlackJack.dealerHand > 16 && BlackJack.dealerHand < 21) {
-      alert("You lose!");
+    } else if (BlackJack.dealerHand > BlackJack.userHand && BlackJack.dealerHand > 16 && BlackJack.dealerHand < 22 && BlackJack.dealerStage === true) {
+      setTimeout(function(){ alert("You Lose"); }, 500);
     } else if (BlackJack.dealerHand === BlackJack.userHand && BlackJack.dealerHand > 16) {
-      alert("You tie!");
+      setTimeout(function(){ alert("You Tie"); }, 500);
+    } else if(BlackJack.dealerHand > 21 && BlackJack.userHand < 22){
+      setTimeout(function(){ alert("Dealer busted, you win!"); }, 500);
     }
-
-    // if Dealer is > user && dealer Greater than 16 && Less than 22
-
-      //alert user loses
   }
 
 
@@ -402,15 +411,17 @@ var AppController = {
     //Hit- If game is not running, do nothing
         //- if game is running- run BLACKJACK.HIT function
     console.log("I am handling the Hit!");
-    if (BlackJack.gameDealt === true) {
-      BlackJack.Hit();
+    if (BlackJack.gameDealt === true && BlackJack.dealerStage === false) {
+      BlackJack.hit();
+    }
+  },
+  handleStand: function(){
+    if (BlackJack.gameDealt === true && BlackJack.dealerStage === false) {
+      BlackJack.stand();
     }
   }
-    //Hit- If game is not running, do nothing
-        //- if game is running- run BLACKJACK.HIT function
-
     //stand- if game is not running, do nothing
-        //- if game is running- run BLACKJACK.
+        //- if game is running- run BLACKJACK.stand
         //CHANGE DEALER STAGE
 };
 
@@ -426,6 +437,6 @@ window.onload = function(){
   });
   $('#stand_button').on('click', function(){
     console.log("Stand Button Clicked");
-    AppController.Stay();
+    AppController.handleStand();
   });
 };
