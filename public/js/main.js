@@ -1,263 +1,315 @@
 var deckOfCards = [
   {
     cardType: 2,
+    cardValue: 2,
     cardSuite: "Hearts",
-    CardImage: "images/2_of_hearts.svg"
+    cardImage: "images/2_of_hearts.svg"
   },
   {
     cardType: 3,
+    cardValue: 3,
     cardSuite: "Hearts",
-    CardImage: "images/3_of_hearts.svg"
+    cardImage: "images/3_of_hearts.svg"
   },
   {
     cardType: 4,
+    cardValue: 4,
     cardSuite: "Hearts",
-    CardImage: "images/4_of_hearts.svg"
+    cardImage: "images/4_of_hearts.svg"
   },
   {
     cardType: 5,
+    cardValue: 5,
     cardSuite: "Hearts",
-    CardImage: "images/5_of_hearts.svg"
+    cardImage: "images/5_of_hearts.svg"
   },
   {
     cardType: 6,
+    cardValue: 6,
     cardSuite: "Hearts",
-    CardImage: "images/6_of_hearts.svg"
+    cardImage: "images/6_of_hearts.svg"
   },
   {
     cardType: 7,
+    cardValue: 7,
     cardSuite: "Hearts",
-    CardImage: "images/7_of_hearts.svg"
+    cardImage: "images/7_of_hearts.svg"
   },
   {
     cardType: 8,
+    cardValue: 8,
     cardSuite: "Hearts",
-    CardImage: "images/8_of_hearts.svg"
+    cardImage: "images/8_of_hearts.svg"
   },
   {
     cardType: 9,
+    cardValue: 9,
     cardSuite: "Hearts",
-    CardImage: "images/9_of_hearts.svg"
+    cardImage: "images/9_of_hearts.svg"
   },
   {
     cardType: 10,
+    cardValue: 10,
     cardSuite: "Hearts",
-    CardImage: "images/10_of_hearts.svg"
+    cardImage: "images/10_of_hearts.svg"
   },
   {
     cardType: "Jack",
+    cardValue: 10,
     cardSuite: "Hearts",
-    CardImage: "images/jack_of_hearts.svg"
+    cardImage: "images/jack_of_hearts.svg"
   },
   {
     cardType: "Queen",
+    cardValue: 10,
     cardSuite: "Hearts",
-    CardImage:"images/queen_of_hearts.svg"
+    cardImage:"images/queen_of_hearts.svg"
   },
   {
     cardType: "King",
+    cardValue: 10,
     cardSuite: "Hearts",
-    CardImage:"images/king_of_hearts.svg"
+    cardImage:"images/king_of_hearts.svg"
   },
   {
     cardType: "Ace",
+    cardValue: 11,
     cardSuite: "Hearts",
-    CardImage: "images/ace_of_hearts.svg"
+    cardImage: "images/ace_of_hearts.svg"
   },
   {
     cardType: 2,
+    cardValue: 2,
     cardSuite: "Diamonds",
-    CardImage: "images/2_of_diamonds.svg"
+    cardImage: "images/2_of_diamonds.svg"
   },
   {
     cardType: 3,
+    cardValue: 3,
     cardSuite: "Diamonds",
-    CardImage:"images/3_of_diamonds.svg"
+    cardImage:"images/3_of_diamonds.svg"
   },
   {
     cardType: 4,
+    cardValue: 4,
     cardSuite: "Diamonds",
-    CardImage:"images/4_of_diamonds.svg"
+    cardImage:"images/4_of_diamonds.svg"
   },
   {
     cardType: 5,
+    cardValue: 5,
     cardSuite: "Diamonds",
-    CardImage:"images/5_of_diamonds.svg"
+    cardImage:"images/5_of_diamonds.svg"
   },
   {
     cardType: 6,
+    cardValue: 6,
     cardSuite: "Diamonds",
-    CardImage:"images/6_of_diamonds.svg"
+    cardImage:"images/6_of_diamonds.svg"
   },
   {
     cardType: 7,
+    cardValue: 7,
     cardSuite: "Diamonds",
-    CardImage:"images/7_of_diamonds.svg"
+    cardImage:"images/7_of_diamonds.svg"
   },
   {
     cardType: 8,
+    cardValue: 8,
     cardSuite: "Diamonds",
-    CardImage:"images/8_of_diamonds.svg"
+    cardImage:"images/8_of_diamonds.svg"
   },
   {
     cardType: 9,
+    cardValue: 9,
     cardSuite: "Diamonds",
-    CardImage:"images/9_of_diamonds.svg"
+    cardImage:"images/9_of_diamonds.svg"
   },
   {
     cardType: 10,
+    cardValue: 10,
     cardSuite: "Diamonds",
-    CardImage:"images/10_of_diamonds.svg"
+    cardImage:"images/10_of_diamonds.svg"
   },
   {
     cardType: "Jack",
+    cardValue: 10,
     cardSuite: "Diamonds",
-    CardImage:"images/jack_of_diamonds.svg"
+    cardImage:"images/jack_of_diamonds.svg"
   },
   {
     cardType: "Queen",
+    cardValue: 10,
     cardSuite: "Diamonds",
-    CardImage:"images/queen_of_diamonds.svg"
+    cardImage:"images/queen_of_diamonds.svg"
   },
   {
     cardType: "King",
+    cardValue: 10,
     cardSuite: "Diamonds",
-    CardImage:"images/king_of_diamonds.svg"
+    cardImage:"images/king_of_diamonds.svg"
   },
   {
     cardType: "Ace",
+    cardValue: 11,
     cardSuite: "Diamonds",
-    CardImage:"images/ace_of_diamonds.svg"
+    cardImage:"images/ace_of_diamonds.svg"
   },
   {
     cardType: 2,
+    cardValue: 2,
     cardSuite: "Clubs",
-    CardImage:"images/2_of_clubs.svg"
+    cardImage:"images/2_of_clubs.svg"
   },
   {
     cardType: 3,
+    cardValue: 3,
     cardSuite: "Clubs",
-    CardImage:"images/3_of_clubs.svg"
+    cardImage:"images/3_of_clubs.svg"
   },
   {
     cardType: 4,
+    cardValue: 4,
     cardSuite: "Clubs",
-    CardImage:"images/4_of_clubs.svg"
+    cardImage:"images/4_of_clubs.svg"
   },
   {
     cardType: 5,
+    cardValue: 5,
     cardSuite: "Clubs",
-    CardImage:"images/5_of_clubs.svg"
+    cardImage:"images/5_of_clubs.svg"
   },
   {
     cardType: 6,
+    cardValue: 6,
     cardSuite: "Clubs",
-    CardImage:"images/6_of_clubs.svg"
+    cardImage:"images/6_of_clubs.svg"
   },
   {
     cardType: 7,
+    cardValue: 7,
     cardSuite: "Clubs",
-    CardImage:"images/7_of_clubs.svg"
+    cardImage:"images/7_of_clubs.svg"
   },
   {
     cardType: 8,
+    cardValue: 8,
     cardSuite: "Clubs",
-    CardImage:"images/8_of_clubs.svg"
+    cardImage:"images/8_of_clubs.svg"
   },
   {
     cardType: 9,
+    cardValue: 9,
     cardSuite: "Clubs",
-    CardImage:"images/9_of_clubs.svg"
+    cardImage:"images/9_of_clubs.svg"
   },
   {
     cardType: 10,
+    cardValue: 10,
     cardSuite: "Clubs",
-    CardImage:"images/10_of_clubs.svg"
+    cardImage:"images/10_of_clubs.svg"
   },
   {
     cardType: "Jack",
+    cardValue: 10,
     cardSuite: "Clubs",
-    CardImage:"images/jack_of_clubs.svg"
+    cardImage:"images/jack_of_clubs.svg"
   },
   {
     cardType: "Queen",
+    cardValue: 10,
     cardSuite: "Clubs",
-    CardImage:"images/queen_of_clubs.svg"
+    cardImage:"images/queen_of_clubs.svg"
   },
   {
     cardType: "King",
+    cardValue: 10,
     cardSuite: "Clubs",
-    CardImage:"images/king_of_clubs.svg"
+    cardImage:"images/king_of_clubs.svg"
   },
   {
     cardType: "Ace",
+    cardValue: 11,
     cardSuite: "Clubs",
-    CardImage:"images/ace_of_clubs.svg"
+    cardImage:"images/ace_of_clubs.svg"
   },
   {
     cardType: 2,
+    cardValue: 2,
     cardSuite: "Spades",
-    CardImage:"images/2_of_spades.svg"
+    cardImage:"images/2_of_spades.svg"
   },
   {
     cardType: 3,
+    cardValue: 3,
     cardSuite: "Spades",
-    CardImage:"images/3_of_spades.svg"
+    cardImage:"images/3_of_spades.svg"
   },
   {
     cardType: 4,
+    cardValue: 4,
     cardSuite: "Spades",
-    CardImage:"images/4_of_spades.svg"
+    cardImage:"images/4_of_spades.svg"
   },
   {
     cardType: 5,
+    cardValue: 5,
     cardSuite: "Spades",
-    CardImage:"images/5_of_spades.svg"
+    cardImage:"images/5_of_spades.svg"
   },
   {
     cardType: 6,
+    cardValue: 6,
     cardSuite: "Spades",
-    CardImage:"images/6_of_spades.svg"
+    cardImage:"images/6_of_spades.svg"
   },
   {
     cardType: 7,
+    cardValue: 7,
     cardSuite: "Spades",
-    CardImage:"images/7_of_spades.svg"
+    cardImage:"images/7_of_spades.svg"
   },
   {
     cardType: 8,
+    cardValue: 8,
     cardSuite: "Spades",
-    CardImage:"images/8_of_spades.svg"
+    cardImage:"images/8_of_spades.svg"
   },
   {
     cardType: 9,
+    cardValue: 9,
     cardSuite: "Spades",
-    CardImage:"images/9_of_spades.svg"
+    cardImage:"images/9_of_spades.svg"
   },
   {
     cardType: 10,
+    cardValue: 10,
     cardSuite: "Spades",
-    CardImage:"images/10_of_spades.svg"
+    cardImage:"images/10_of_spades.svg"
   },
   {
     cardType: "Jack",
+    cardValue: 10,
     cardSuite: "Spades",
-    CardImage:"images/jack_of_spades.svg"
+    cardImage:"images/jack_of_spades.svg"
   },
   {
     cardType: "Queen",
+    cardValue: 10,
     cardSuite: "Spades",
-    CardImage:"images/queen_of_spades.svg"
+    cardImage:"images/queen_of_spades.svg"
   },
   {
     cardType: "King",
+    cardValue: 10,
     cardSuite: "Spades",
-    CardImage:"images/king_of_spades.svg"
+    cardImage:"images/king_of_spades.svg"
   },
   {
     cardType: "Ace",
+    cardValue: 11,
     cardSuite: "Spades",
-    CardImage:"images/ace_of_spades.svg"
+    cardImage:"images/ace_of_spades.svg"
   }
 ];
 
@@ -273,9 +325,16 @@ var BlackJack = {
   dealHand: function(){
     console.log("Hand Dealt!");
     AppHelpers.getRandomCard();
-    $('#playerCardOne').attr("src", randomCards[(randomCards.length - 1)].CardImage);
-    // console.log(randomCards[randomCards.length].CardImage);
-    console.log(randomCards);
+    AppHelpers.getRandomCard();
+    BlackJack.dealerStage = true;
+    AppHelpers.getRandomCard();
+    AppHelpers.getRandomCard();
+    BlackJack.dealerStage = false;
+    console.log(BlackJack.dealerRandomCards);
+    console.log(BlackJack.userRandomCards);
+    // $('#playerCardOne').attr("src", userRandomCards[(userRandomCards.length - 1)].cardImage);
+    // console.log(randomCards[randomCards.length].cardImage);
+
   },
   // hit:
   // stand:
@@ -319,12 +378,14 @@ var AppHelpers = {
     //   if (randomCardType === "Jack" || randomCardType === "Queen" || randomCardType === "King") {
     //     randomCardType = 10;
     //   }
-    // var randomCardImage = deckOfCards[randomNumber].CardImage;
+    // var randomcardImage = deckOfCards[randomNumber].cardImage;
     if (BlackJack.dealerStage === false) {
       BlackJack.userRandomCards.push(randomCard);
+      BlackJack.userHand += randomCard.cardValue;
       console.log(BlackJack.userRandomCards);
     } else if (BlackJack.dealerStage === true) {
       BlackJack.dealerRandomCards.push(randomCard);
+      BlackJack.dealerHand += randomCard.cardValue;
       console.log(BlackJack.dealerRandomCards);
     }
 
