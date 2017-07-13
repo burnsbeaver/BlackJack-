@@ -320,6 +320,23 @@ var BlackJack = {
   dealerHand: 0,
   gameDealt: false,
   dealerStage: false,
+  showDealerCard: function(){
+    var firstCardImage = BlackJack.dealerRandomCards[0].cardImage;
+    if (BlackJack.dealerStage === false) {
+      $('#dealercards').first().removeAttr("src");
+      $('#dealercards').first().setAttribute('src', 'http://fillmurray.com/84/125');
+      console.log(BlackJack.dealerStage);
+    } else if (BlackJack.dealerStage === true) {
+      $('#dealercards').first().attr('src', `${firstCardImage}`);
+    }
+    console.log(firstCardImage);
+
+    // if (BlackJack.dealerStage === false) {
+    //   BlackJack.dealerRandomCards[0] = "http://fillmurray.com/125/84";
+    // } else if (BlackJack.dealerStage === true) {
+    //   BlackJack.dealerRandomCards[0] = firstCardImage;
+    // }
+  },
   dealHand: function(){
     console.log("Hand Dealt!");
     AppHelpers.getRandomCard();
@@ -328,14 +345,13 @@ var BlackJack = {
     AppHelpers.getRandomCard();
     AppHelpers.getRandomCard();
     BlackJack.dealerStage = false;
+    BlackJack.showDealerCard();
     BlackJack.checkForBlackJack();
+
   },
   hit: function(){
     AppHelpers.getRandomCard();
     BlackJack.checkForWin();
-    if (BlackJack.userHand > 21) {
-      setTimeout(function(){alert("Busted! You lose."); }, 500);
-    }
   },
   stand: function(){
     BlackJack.dealerStage = true;
@@ -355,18 +371,22 @@ var BlackJack = {
   },
   checkForWin: function() {
     if (BlackJack.userHand > BlackJack.dealerHand && BlackJack.userHand < 22 && BlackJack.dealerHand > 16) {
-      setTimeout(function(){ alert("You Win!"); }, 500);
+      setTimeout(function(){ alert("You Win! Your Score:" + BlackJack.userHand + " Dealer Score:" + BlackJack.dealerHand); }, 500);
     } else if (BlackJack.dealerHand > BlackJack.userHand && BlackJack.dealerHand > 16 && BlackJack.dealerHand < 22 && BlackJack.dealerStage === true) {
-      setTimeout(function(){ alert("You Lose"); }, 500);
+      setTimeout(function(){ alert("You Lose. Your Score:" + BlackJack.userHand + " Dealer Score:" + BlackJack.dealerHand); }, 500);
     } else if (BlackJack.dealerHand === BlackJack.userHand && BlackJack.dealerHand > 16) {
-      setTimeout(function(){ alert("You Tie"); }, 500);
+      setTimeout(function(){ alert("Push. Your Score:" + BlackJack.userHand + " Dealer Score:" + BlackJack.dealerHand); }, 500);
+    } else if (BlackJack.userHand > 21) {
+      setTimeout(function(){alert("Busted! You lose. Your Score:" + BlackJack.userHand + " Dealer Score:" + BlackJack.dealerHand); }, 500);
     } else if(BlackJack.dealerHand > 21 && BlackJack.userHand < 22){
-      setTimeout(function(){ alert("Dealer busted, you win!"); }, 500);
+      setTimeout(function(){ alert("Dealer busted, you win! Your Score:" + BlackJack.userHand + " Dealer Score:" + BlackJack.dealerHand); }, 500);
     }
   },
   reset: function(){
     BlackJack.userHand = 0;
+    BlackJack.userRandomCards = [];
     BlackJack.dealerHand = 0;
+    BlackJack.dealerRandomCards = [];
     BlackJack.gameDealt = false;
     BlackJack.dealerStage = false;
     $( ".card").remove();
@@ -397,7 +417,6 @@ var AppController = {
       BlackJack.dealHand();
     }
   },
-
   handleHit: function(){
     if (BlackJack.gameDealt === true && BlackJack.dealerStage === false) {
       BlackJack.hit();
