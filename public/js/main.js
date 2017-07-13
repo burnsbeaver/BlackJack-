@@ -262,20 +262,51 @@ var deckOfCards = [
 ];
 
 var BlackJack = {
-  randomCards: [],
-  randomCardCounter: 0,
+  userRandomCards: [],
+  userRandomCardCounter: 0,
   userHand: 0,
-  playerHand: 0,
+  dealerRandomCards: [],
+  dealerRandomCardCounter: 0,
+  dealerHand: 0,
   gameDealt: false,
+  dealerStage: false,
   dealHand: function(){
     console.log("Hand Dealt!");
-    
+    AppHelpers.getRandomCard();
+    $('#playerCardOne').attr("src", randomCards[(randomCards.length - 1)].CardImage);
+    // console.log(randomCards[randomCards.length].CardImage);
+    console.log(randomCards);
   },
   // hit:
   // stand:
-  // check:
+  // checkForBlackJack
+  checkForBlackJack: function(){
+    if (BlackJack.userHand === 21) {
+      //if user has 21 points
+        //alert(blackjack! User wins)
+      //if dealer has 21 points
+        //alert(Dealer has blackjack, you lose!)
+      alert("BlackJack! You win!");
+    } else if (BlackJack.dealerHand === 21) {
+      alert ("Dealer has BlackJack, you lose.");
+    }
+  },
+  checkForWin: function() {
+    // checkForWin: Parameters(userHand, dealerhand)
+    // if User is > Dealer && user is less than 22
+    if (BlackJack.userHand > BlackJack.dealerHand && BlackJack.userhand < 22) {
+      alert("You win!");
+      //alert user wins
+    } else if (BlackJack.dealerHand > BlackJack.userHand && BlackJack.dealerHand > 16 && BlackJack.dealerHand < 21) {
+      alert("You lose!");
+    } else if (BlackJack.dealerHand === BlackJack.userHand && BlackJack.dealerHand > 16) {
+      alert("You tie!");
+    }
 
+    // if Dealer is > user && dealer Greater than 16 && Less than 22
 
+      //alert user loses
+  }
 
 
 };
@@ -289,8 +320,14 @@ var AppHelpers = {
     //     randomCardType = 10;
     //   }
     // var randomCardImage = deckOfCards[randomNumber].CardImage;
-    BlackJack.randomCards.push(randomCard);
-    console.log(BlackJack.randomCards);
+    if (BlackJack.dealerStage === false) {
+      BlackJack.userRandomCards.push(randomCard);
+      console.log(BlackJack.userRandomCards);
+    } else if (BlackJack.dealerStage === true) {
+      BlackJack.dealerRandomCards.push(randomCard);
+      console.log(BlackJack.dealerRandomCards);
+    }
+
   }
   // convertCardToValue: function
   //
@@ -308,14 +345,22 @@ var AppController = {
       BlackJack.dealHand();
       console.log("is the hand dealt?" + BlackJack.gameDealt);
     }
+  },
+
+  handleHit: function(){
+    //Hit- If game is not running, do nothing
+        //- if game is running- run BLACKJACK.HIT function
+    console.log("I am handling the Hit!");
+    if (BlackJack.gameDealt === true) {
+      BlackJack.Hit();
+    }
   }
-
-
     //Hit- If game is not running, do nothing
         //- if game is running- run BLACKJACK.HIT function
 
     //stand- if game is not running, do nothing
         //- if game is running- run BLACKJACK.
+        //CHANGE DEALER STAGE
 };
 
 //event listeners
@@ -326,7 +371,7 @@ window.onload = function(){
   });
   $('#hit_button').on('click', function(){
     console.log("Hit Button Clicked");
-    AppController.Hit();
+    AppController.handleHit();
   });
   $('#stand_button').on('click', function(){
     console.log("Stand Button Clicked");
