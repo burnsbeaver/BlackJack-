@@ -330,11 +330,7 @@ var BlackJack = {
     AppHelpers.getRandomCard();
     AppHelpers.getRandomCard();
     BlackJack.dealerStage = false;
-    console.log(BlackJack.dealerRandomCards);
-    console.log(BlackJack.userRandomCards);
-    // $('#playerCardOne').attr("src", userRandomCards[(userRandomCards.length - 1)].cardImage);
-    // console.log(randomCards[randomCards.length].cardImage);
-
+    BlackJack.checkForBlackJack();
   },
   // hit:
   // stand:
@@ -345,9 +341,9 @@ var BlackJack = {
         //alert(blackjack! User wins)
       //if dealer has 21 points
         //alert(Dealer has blackjack, you lose!)
-      alert("BlackJack! You win!");
+      setTimeout(function(){ alert("BlackJack! You Win!"); }, 500);
     } else if (BlackJack.dealerHand === 21) {
-      alert ("Dealer has BlackJack, you lose.");
+      setTimeout(function(){ alert("Dealer has BlackJack, you lose."); }, 500);
     }
   },
   checkForWin: function() {
@@ -373,25 +369,19 @@ var AppHelpers = {
   getRandomCard: function(){
     var randomNumber = Math.floor(Math.random() * 52);
     var randomCard = deckOfCards[randomNumber];
-    // var randomCardType = deckOfCards[randomNumber].cardType;
-    // var randomCardSuite = deckOfCards[randomNumber].cardSuite;
-    //   if (randomCardType === "Jack" || randomCardType === "Queen" || randomCardType === "King") {
-    //     randomCardType = 10;
-    //   }
-    // var randomcardImage = deckOfCards[randomNumber].cardImage;
     if (BlackJack.dealerStage === false) {
       BlackJack.userRandomCards.push(randomCard);
       BlackJack.userHand += randomCard.cardValue;
+      $("#usercards").append(`<img class='card' src='${randomCard.cardImage}'/>`);
       console.log(BlackJack.userRandomCards);
     } else if (BlackJack.dealerStage === true) {
       BlackJack.dealerRandomCards.push(randomCard);
       BlackJack.dealerHand += randomCard.cardValue;
+      $("#dealercards").append(`<img class='card' src='${randomCard.cardImage}'/>`);
       console.log(BlackJack.dealerRandomCards);
     }
 
   }
-  // convertCardToValue: function
-  //
 };
 
 var AppController = {
