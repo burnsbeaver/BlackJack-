@@ -315,6 +315,7 @@ var deckOfCards = [
 
 var BlackJack = {
   userRandomCards: [],
+  userCardValues: [],
   userHand: 0,
   dealerRandomCards: [],
   dealerHand: 0,
@@ -416,6 +417,7 @@ var AppHelpers = {
     var randomCard = deckOfCards[randomNumber];
     if (BlackJack.dealerStage === false) {
       BlackJack.userRandomCards.push(randomCard);
+      BlackJack.userCardValues.push(randomCard.cardValue)
       BlackJack.userHand += randomCard.cardValue;
       // $("#usercards").append(`<img class='card' src='${randomCard.cardImage}'/>`);
       var newCard = $('<span>');
