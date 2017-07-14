@@ -73,7 +73,7 @@ var deckOfCards = [
   },
   {
     cardType: "Ace",
-    cardValue: 11,
+    cardValue: 11 || 1,
     cardSuite: "Hearts",
     cardImage: "images/ace_of_hearts.svg"
   },
@@ -151,7 +151,7 @@ var deckOfCards = [
   },
   {
     cardType: "Ace",
-    cardValue: 11,
+    cardValue: 11 || 1,
     cardSuite: "Diamonds",
     cardImage:"images/ace_of_diamonds.svg"
   },
@@ -229,7 +229,7 @@ var deckOfCards = [
   },
   {
     cardType: "Ace",
-    cardValue: 11,
+    cardValue: 11 || 1,
     cardSuite: "Clubs",
     cardImage:"images/ace_of_clubs.svg"
   },
@@ -307,7 +307,7 @@ var deckOfCards = [
   },
   {
     cardType: "Ace",
-    cardValue: 11,
+    cardValue: 11 || 1,
     cardSuite: "Spades",
     cardImage:"images/ace_of_spades.svg"
   }
@@ -320,23 +320,25 @@ var BlackJack = {
   dealerHand: 0,
   gameDealt: false,
   dealerStage: false,
-  // showDealerCard: function(){
-  //   var firstCardImage = BlackJack.dealerRandomCards[0].cardImage;
-  //   if (BlackJack.dealerStage === false) {
-  //     $('#dealercards').first().removeAttr("src");
-  //     $('#dealercards').first().setAttribute('src', 'http://fillmurray.com/84/125');
-  //     console.log(BlackJack.dealerStage);
-  //   } else if (BlackJack.dealerStage === true) {
-  //     $('#dealercards').first().attr('src', `${firstCardImage}`);
-  //   }
-  //   console.log(firstCardImage);
-
-    // if (BlackJack.dealerStage === false) {
-    //   BlackJack.dealerRandomCards[0] = "http://fillmurray.com/125/84";
+  showDealerCard: function(){
+    var firstCardImage = BlackJack.dealerRandomCards[0].cardImage;
+    if (BlackJack.dealerStage === false) {
+      $("[data-dealer="+"0"+"]").html(`<img class='card' src='http:fillmurray.com/84/125'/>`);
+    //   $('#dealercards').first().removeAttr("src");
+    //   $('#dealercards').first().setAttribute('src', 'http://fillmurray.com/84/125');
+    //   console.log(BlackJack.dealerStage);
     // } else if (BlackJack.dealerStage === true) {
-    //   BlackJack.dealerRandomCards[0] = firstCardImage;
-    // }
-  // },
+    //   $('#dealercards').first().attr('src', `${firstCardImage}`);
+    }
+    // console.log(firstCardImage);
+
+    if (BlackJack.dealerStage === true) {
+      $("[data-dealer="+"0"+"]").html(`<img class='card' src='${BlackJack.dealerRandomCards[0].cardImage}'/>`);
+  //     BlackJack.dealerRandomCards[0] = "http://fillmurray.com/125/84";
+  //   } else if (BlackJack.dealerStage === true) {
+  //     BlackJack.dealerRandomCards[0] = firstCardImage;
+    }
+  },
   dealHand: function(){
     console.log("Hand Dealt!");
     AppHelpers.getRandomCard();
@@ -346,7 +348,7 @@ var BlackJack = {
     AppHelpers.getRandomCard();
     BlackJack.dealerStage = false;
     AppHelpers.displayUserScore();
-    // BlackJack.showDealerCard();
+    BlackJack.showDealerCard();
     BlackJack.checkForBlackJack();
 
   },
@@ -357,6 +359,7 @@ var BlackJack = {
   },
   stand: function(){
     BlackJack.dealerStage = true;
+    BlackJack.showDealerCard();
     BlackJack.checkForWin();
     console.log(BlackJack.dealerStage);
     while (BlackJack.dealerHand < 17) {
@@ -366,23 +369,31 @@ var BlackJack = {
   },
   checkForBlackJack: function(){
     if (BlackJack.userHand === 21) {
+      BlackJack.dealerStage = true;
+      BlackJack.showDealerCard();
       setTimeout(function(){ alert("BlackJack! You Win!"); }, 500);
     } else if (BlackJack.dealerHand === 21) {
+      BlackJack.dealerStage = true;
+      BlackJack.showDealerCard();
       setTimeout(function(){ alert("Dealer has BlackJack, you lose."); }, 500);
     }
   },
   checkForWin: function() {
-    if (BlackJack.userHand > BlackJack.dealerHand && BlackJack.userHand < 22 && BlackJack.dealerHand > 16) {
-      setTimeout(function(){ alert("You Win! Your Score:" + BlackJack.userHand + " Dealer Score:" + BlackJack.dealerHand); }, 500);
-    } else if (BlackJack.dealerHand > BlackJack.userHand && BlackJack.dealerHand > 16 && BlackJack.dealerHand < 22 && BlackJack.dealerStage === true) {
-      setTimeout(function(){ alert("You Lose. Your Score:" + BlackJack.userHand + " Dealer Score:" + BlackJack.dealerHand); }, 500);
-    } else if (BlackJack.dealerHand === BlackJack.userHand && BlackJack.dealerHand > 16) {
-      setTimeout(function(){ alert("Push. Your Score:" + BlackJack.userHand + " Dealer Score:" + BlackJack.dealerHand); }, 500);
-    } else if (BlackJack.userHand > 21) {
+    if (BlackJack.dealerStage === true) {
+      if (BlackJack.userHand > BlackJack.dealerHand && BlackJack.userHand < 22 && BlackJack.dealerHand > 16) {
+        setTimeout(function(){ alert("You Win! Your Score:" + BlackJack.userHand + " Dealer Score:" + BlackJack.dealerHand); }, 500);
+      } else if (BlackJack.dealerHand > BlackJack.userHand && BlackJack.dealerHand > 16 && BlackJack.dealerHand < 22 && BlackJack.dealerStage === true) {
+        setTimeout(function(){ alert("You Lose. Your Score:" + BlackJack.userHand + " Dealer Score:" + BlackJack.dealerHand); }, 500);
+      } else if (BlackJack.dealerHand === BlackJack.userHand && BlackJack.dealerHand > 16) {
+        setTimeout(function(){ alert("Push. Your Score:" + BlackJack.userHand + " Dealer Score:" + BlackJack.dealerHand); }, 500);
+      }
+    }
+    if (BlackJack.userHand > 21) {
       setTimeout(function(){alert("Busted! You lose. Your Score:" + BlackJack.userHand + " Dealer Score:" + BlackJack.dealerHand); }, 500);
     } else if(BlackJack.dealerHand > 21 && BlackJack.userHand < 22){
       setTimeout(function(){ alert("Dealer busted, you win! Your Score:" + BlackJack.userHand + " Dealer Score:" + BlackJack.dealerHand); }, 500);
     }
+
   },
   reset: function(){
     BlackJack.userHand = 0;
@@ -392,7 +403,10 @@ var BlackJack = {
     BlackJack.gameDealt = false;
     BlackJack.dealerStage = false;
     AppHelpers.displayUserScore();
-    $( ".card").remove();
+    // $(".card").empty()
+    // $( ".card").remove();
+    $("#dealercards").empty();
+    $("#usercards").empty();
   }
 
 };
@@ -403,11 +417,23 @@ var AppHelpers = {
     if (BlackJack.dealerStage === false) {
       BlackJack.userRandomCards.push(randomCard);
       BlackJack.userHand += randomCard.cardValue;
-      $("#usercards").append(`<img class='card' src='${randomCard.cardImage}'/>`);
+      // $("#usercards").append(`<img class='card' src='${randomCard.cardImage}'/>`);
+      var newCard = $('<span>');
+      newCard.addClass("cards");
+      newCard.attr("data-user", BlackJack.userRandomCards.length - 1);
+      console.log(BlackJack.userRandomCards.length - 1);
+      newCard.html(`<img class='card' src='${randomCard.cardImage}'/>`);
+      $('#usercards').append(newCard);
     } else if (BlackJack.dealerStage === true) {
       BlackJack.dealerRandomCards.push(randomCard);
       BlackJack.dealerHand += randomCard.cardValue;
-      $("#dealercards").append(`<img class='card' src='${randomCard.cardImage}'/>`);
+      // $("#dealercards").append(`<img class='card' src='${randomCard.cardImage}'/>`);
+      var newCard = $('<span>');
+      newCard.addClass("cards");
+      newCard.attr("data-dealer", BlackJack.dealerRandomCards.length - 1);
+      console.log(BlackJack.dealerRandomCards.length - 1);
+      newCard.html(`<img class='card' src='${randomCard.cardImage}'/>`);
+      $('#dealercards').append(newCard);
     }
   },
   displayUserScore: function(){
