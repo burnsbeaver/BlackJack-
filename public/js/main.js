@@ -324,7 +324,7 @@ var BlackJack = {
   showDealerCard: function(){
     var firstCardImage = BlackJack.dealerRandomCards[0].cardImage;
     if (BlackJack.dealerStage === false) {
-      $("[data-dealer="+"0"+"]").html(`<img class='card' src='http:fillmurray.com/84/125'/>`);
+      $("[data-dealer="+"0"+"]").html(`<img class='card' src='images/fillmurray.jpg'/>`);
     //   $('#dealercards').first().removeAttr("src");
     //   $('#dealercards').first().setAttribute('src', 'http://fillmurray.com/84/125');
     //   console.log(BlackJack.dealerStage);
@@ -341,7 +341,9 @@ var BlackJack = {
     }
   },
   dealHand: function(){
+
     console.log("Hand Dealt!");
+    BlackJack.gameDealt = true;
     AppHelpers.getRandomCard();
     AppHelpers.getRandomCard();
     BlackJack.dealerStage = true;
