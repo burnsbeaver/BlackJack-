@@ -362,7 +362,6 @@ var BlackJack = {
     BlackJack.dealerStage = true;
     BlackJack.showDealerCard();
     BlackJack.checkForWin();
-    console.log(BlackJack.dealerStage);
     while (BlackJack.dealerHand < 17) {
       setTimeout(AppHelpers.getRandomCard(), 1000);
       BlackJack.checkForWin();
@@ -399,6 +398,7 @@ var BlackJack = {
   reset: function(){
     BlackJack.userHand = 0;
     BlackJack.userRandomCards = [];
+    BlackJack.userCardValues = [];
     BlackJack.dealerHand = 0;
     BlackJack.dealerRandomCards = [];
     BlackJack.gameDealt = false;
@@ -417,13 +417,30 @@ var AppHelpers = {
     var randomCard = deckOfCards[randomNumber];
     if (BlackJack.dealerStage === false) {
       BlackJack.userRandomCards.push(randomCard);
-      BlackJack.userCardValues.push(randomCard.cardValue)
-      BlackJack.userHand += randomCard.cardValue;
+      BlackJack.userCardValues.push(randomCard.cardValue);
+      BlackJack.userHand = 0;
+      for (var i = 0; i < BlackJack.userCardValues.length; i++) {
+        BlackJack.userHand += BlackJack.userCardValues[i];
+          console.log(BlackJack.userHand);
+        if(BlackJack.userHand > 21){
+          for (var j = 0; j < BlackJack.userCardValues.length; j++) {
+            if (BlackJack.userCardValues[j] === 11) {
+              console.log(BlackJack.userHand);
+            BlackJack.userHand -= BlackJack.userCardValues[j];
+              console.log(BlackJack.userHand);
+            BlackJack.userCardValues[j] = 1;
+              console.log(BlackJack.userHand);
+            BlackJack.userHand += BlackJack.userCardValues[j];
+              console.log(BlackJack.userHand);
+            }
+          }
+        }
+      }
+      // BlackJack.userHand += randomCard.cardValue;
       // $("#usercards").append(`<img class='card' src='${randomCard.cardImage}'/>`);
       var newCard = $('<span>');
       newCard.addClass("cards");
       newCard.attr("data-user", BlackJack.userRandomCards.length - 1);
-      console.log(BlackJack.userRandomCards.length - 1);
       newCard.html(`<img class='card' src='${randomCard.cardImage}'/>`);
       $('#usercards').append(newCard);
     } else if (BlackJack.dealerStage === true) {
@@ -433,7 +450,6 @@ var AppHelpers = {
       var newCard = $('<span>');
       newCard.addClass("cards");
       newCard.attr("data-dealer", BlackJack.dealerRandomCards.length - 1);
-      console.log(BlackJack.dealerRandomCards.length - 1);
       newCard.html(`<img class='card' src='${randomCard.cardImage}'/>`);
       $('#dealercards').append(newCard);
     }
