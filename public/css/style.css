@@ -11,6 +11,9 @@ body {
   main {
     flex: 1 0 auto;
   }
+.collapsible-header{
+opacity: .75;
+}
 .page-footer {
   background-color: rgba(0, 0, 0, 0.5);
 }

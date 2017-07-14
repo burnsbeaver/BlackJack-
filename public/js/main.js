@@ -73,7 +73,7 @@ var deckOfCards = [
   },
   {
     cardType: "Ace",
-    cardValue: 11 || 1,
+    cardValue: 11,
     cardSuite: "Hearts",
     cardImage: "images/ace_of_hearts.svg"
   },
@@ -151,7 +151,7 @@ var deckOfCards = [
   },
   {
     cardType: "Ace",
-    cardValue: 11 || 1,
+    cardValue: 11,
     cardSuite: "Diamonds",
     cardImage:"images/ace_of_diamonds.svg"
   },
@@ -229,7 +229,7 @@ var deckOfCards = [
   },
   {
     cardType: "Ace",
-    cardValue: 11 || 1,
+    cardValue: 11,
     cardSuite: "Clubs",
     cardImage:"images/ace_of_clubs.svg"
   },
@@ -307,7 +307,7 @@ var deckOfCards = [
   },
   {
     cardType: "Ace",
-    cardValue: 11 || 1,
+    cardValue: 11,
     cardSuite: "Spades",
     cardImage:"images/ace_of_spades.svg"
   }
