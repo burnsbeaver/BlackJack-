@@ -320,23 +320,23 @@ var BlackJack = {
   dealerHand: 0,
   gameDealt: false,
   dealerStage: false,
-  showDealerCard: function(){
-    var firstCardImage = BlackJack.dealerRandomCards[0].cardImage;
-    if (BlackJack.dealerStage === false) {
-      $('#dealercards').first().removeAttr("src");
-      $('#dealercards').first().setAttribute('src', 'http://fillmurray.com/84/125');
-      console.log(BlackJack.dealerStage);
-    } else if (BlackJack.dealerStage === true) {
-      $('#dealercards').first().attr('src', `${firstCardImage}`);
-    }
-    console.log(firstCardImage);
+  // showDealerCard: function(){
+  //   var firstCardImage = BlackJack.dealerRandomCards[0].cardImage;
+  //   if (BlackJack.dealerStage === false) {
+  //     $('#dealercards').first().removeAttr("src");
+  //     $('#dealercards').first().setAttribute('src', 'http://fillmurray.com/84/125');
+  //     console.log(BlackJack.dealerStage);
+  //   } else if (BlackJack.dealerStage === true) {
+  //     $('#dealercards').first().attr('src', `${firstCardImage}`);
+  //   }
+  //   console.log(firstCardImage);
 
     // if (BlackJack.dealerStage === false) {
     //   BlackJack.dealerRandomCards[0] = "http://fillmurray.com/125/84";
     // } else if (BlackJack.dealerStage === true) {
     //   BlackJack.dealerRandomCards[0] = firstCardImage;
     // }
-  },
+  // },
   dealHand: function(){
     console.log("Hand Dealt!");
     AppHelpers.getRandomCard();
@@ -345,13 +345,15 @@ var BlackJack = {
     AppHelpers.getRandomCard();
     AppHelpers.getRandomCard();
     BlackJack.dealerStage = false;
-    BlackJack.showDealerCard();
+    AppHelpers.displayUserScore();
+    // BlackJack.showDealerCard();
     BlackJack.checkForBlackJack();
 
   },
   hit: function(){
     AppHelpers.getRandomCard();
     BlackJack.checkForWin();
+    AppHelpers.displayUserScore();
   },
   stand: function(){
     BlackJack.dealerStage = true;
@@ -389,6 +391,7 @@ var BlackJack = {
     BlackJack.dealerRandomCards = [];
     BlackJack.gameDealt = false;
     BlackJack.dealerStage = false;
+    AppHelpers.displayUserScore();
     $( ".card").remove();
   }
 
@@ -406,7 +409,9 @@ var AppHelpers = {
       BlackJack.dealerHand += randomCard.cardValue;
       $("#dealercards").append(`<img class='card' src='${randomCard.cardImage}'/>`);
     }
-
+  },
+  displayUserScore: function(){
+     $('#userscore').html(BlackJack.userHand);
   }
 };
 
