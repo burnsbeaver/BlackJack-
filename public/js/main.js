@@ -423,17 +423,17 @@ var AppHelpers = {
       BlackJack.userHand = 0;
       for (var i = 0; i < BlackJack.userCardValues.length; i++) {
         BlackJack.userHand += BlackJack.userCardValues[i];
-          console.log(BlackJack.userHand);
+          // console.log(BlackJack.userHand);
         if(BlackJack.userHand > 21){
           for (var j = 0; j < BlackJack.userCardValues.length; j++) {
             if (BlackJack.userCardValues[j] === 11) {
-              console.log(BlackJack.userHand);
+              // console.log(BlackJack.userHand);
             BlackJack.userHand -= BlackJack.userCardValues[j];
-              console.log(BlackJack.userHand);
+              // console.log(BlackJack.userHand);
             BlackJack.userCardValues[j] = 1;
-              console.log(BlackJack.userHand);
+              // console.log(BlackJack.userHand);
             BlackJack.userHand += BlackJack.userCardValues[j];
-              console.log(BlackJack.userHand);
+              // console.log(BlackJack.userHand);
             }
           }
         }
