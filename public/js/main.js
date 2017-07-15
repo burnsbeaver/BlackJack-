@@ -318,6 +318,7 @@ var BlackJack = {
   userCardValues: [],
   userHand: 0,
   dealerRandomCards: [],
+  dealerCardValues: [],
   dealerHand: 0,
   gameDealt: false,
   dealerStage: false,
@@ -403,6 +404,7 @@ var BlackJack = {
     BlackJack.userCardValues = [];
     BlackJack.dealerHand = 0;
     BlackJack.dealerRandomCards = [];
+    BlackJack.dealerCardValues = [];
     BlackJack.gameDealt = false;
     BlackJack.dealerStage = false;
     AppHelpers.displayUserScore();
@@ -447,7 +449,26 @@ var AppHelpers = {
       $('#usercards').append(newCard);
     } else if (BlackJack.dealerStage === true) {
       BlackJack.dealerRandomCards.push(randomCard);
-      BlackJack.dealerHand += randomCard.cardValue;
+      BlackJack.dealerCardValues.push(randomCard.cardValue);
+      BlackJack.dealerHand = 0;
+      for (var i = 0; i < BlackJack.dealerCardValues.length; i++) {
+        BlackJack.dealerHand += BlackJack.dealerCardValues[i];
+          // console.log(BlackJack.userHand);
+        if(BlackJack.dealerHand > 21){
+          for (var j = 0; j < BlackJack.dealerCardValues.length; j++) {
+            if (BlackJack.dealerCardValues[j] === 11) {
+              // console.log(BlackJack.dealerHand);
+            BlackJack.dealerHand -= BlackJack.dealerCardValues[j];
+              // console.log(BlackJack.dealerHand);
+            BlackJack.dealerCardValues[j] = 1;
+              // console.log(BlackJack.dealerHand);
+            BlackJack.dealerHand += BlackJack.dealerCardValues[j];
+              // console.log(BlackJack.dealerHand);
+            }
+          }
+        }
+      }
+      // BlackJack.dealerHand += randomCard.cardValue;
       // $("#dealercards").append(`<img class='card' src='${randomCard.cardImage}'/>`);
       var newCard = $('<span>');
       newCard.addClass("cards");
