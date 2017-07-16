@@ -15,7 +15,7 @@
   </header>
   <main>
     <div class="row center">
-        <div class="col s12 l6 ">
+        <div class="col s12 l12">
           <ul class="collapsible" data-collapsible="accordion">
           <li>
             <div class="collapsible-header green"><i class="material-icons">games</i>Game Rules</div>
@@ -34,20 +34,23 @@
           </li>
         </ul>
       </div>
-
-    <div class="buttoncontainer">
-      <div class="container">
-        <button type="button" name="button" class="waves-effect waves-light btn-large green" id="deal_button">Deal</button>
-        <button type="button" name="button" class="waves-effect waves-light btn-large purple" id="reset_button">Reset</button>
-      </div>
-      <div class="container">
-        <button type="button" name="button" class="waves-effect waves-light btn-large blue" id="stand_button">Stand</button>
-        <button type="button" name="button" class="waves-effect waves-light btn-large red" id="hit_button">Hit</button>
+    <div class="row">
+      <div class="buttoncontainer">
+        <span class="bettingbuttons">
+        <button type="button" name="button" class="waves-effect waves-light btn-large green" id="add100_button">+100</button>
+        <span> PlaceHolder for gamling data </span>
+        <button type="button" name="button" class="waves-effect waves-light btn-large red" id="subtract100_button">-100</button>
+      </span>
       </div>
     </div>
   </div>
     <div class="handscontainer">
-      <div class="handsrow">
+      <div class="container col s4">
+        <button type="button" name="button" class="waves-effect waves-light btn-large green" id="deal_button">Deal</button>
+        <button type="button" name="button" class="waves-effect waves-light btn-large blue" id="stand_button">Stand</button>
+        <button type="button" name="button" class="waves-effect waves-light btn-large red" id="hit_button">Hit</button>
+      </div>
+      <span class="handsrow">
           <div class="userhand">
             <div>
               <h3>Hand: <span id="userscore">0</span</h3>
@@ -62,7 +65,7 @@
             <div id="dealercards">
             </div>
           </div>
-      </div>
+      </span>
     </div>
   </main>
   <footer class="page-footer">

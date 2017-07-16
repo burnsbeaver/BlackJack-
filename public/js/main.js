@@ -111,205 +111,205 @@ var deckOfCards = [
     cardType: 7,
     cardValue: 7,
     cardSuite: "Diamonds",
-    cardImage:"images/7_of_diamonds.svg"
+    cardImage: "images/7_of_diamonds.svg"
   },
   {
     cardType: 8,
     cardValue: 8,
     cardSuite: "Diamonds",
-    cardImage:"images/8_of_diamonds.svg"
+    cardImage: "images/8_of_diamonds.svg"
   },
   {
     cardType: 9,
     cardValue: 9,
     cardSuite: "Diamonds",
-    cardImage:"images/9_of_diamonds.svg"
+    cardImage: "images/9_of_diamonds.svg"
   },
   {
     cardType: 10,
     cardValue: 10,
     cardSuite: "Diamonds",
-    cardImage:"images/10_of_diamonds.svg"
+    cardImage: "images/10_of_diamonds.svg"
   },
   {
     cardType: "Jack",
     cardValue: 10,
     cardSuite: "Diamonds",
-    cardImage:"images/jack_of_diamonds.svg"
+    cardImage: "images/jack_of_diamonds.svg"
   },
   {
     cardType: "Queen",
     cardValue: 10,
     cardSuite: "Diamonds",
-    cardImage:"images/queen_of_diamonds.svg"
+    cardImage: "images/queen_of_diamonds.svg"
   },
   {
     cardType: "King",
     cardValue: 10,
     cardSuite: "Diamonds",
-    cardImage:"images/king_of_diamonds.svg"
+    cardImage: "images/king_of_diamonds.svg"
   },
   {
     cardType: "Ace",
     cardValue: 11,
     cardSuite: "Diamonds",
-    cardImage:"images/ace_of_diamonds.svg"
+    cardImage: "images/ace_of_diamonds.svg"
   },
   {
     cardType: 2,
     cardValue: 2,
     cardSuite: "Clubs",
-    cardImage:"images/2_of_clubs.svg"
+    cardImage: "images/2_of_clubs.svg"
   },
   {
     cardType: 3,
     cardValue: 3,
     cardSuite: "Clubs",
-    cardImage:"images/3_of_clubs.svg"
+    cardImage: "images/3_of_clubs.svg"
   },
   {
     cardType: 4,
     cardValue: 4,
     cardSuite: "Clubs",
-    cardImage:"images/4_of_clubs.svg"
+    cardImage: "images/4_of_clubs.svg"
   },
   {
     cardType: 5,
     cardValue: 5,
     cardSuite: "Clubs",
-    cardImage:"images/5_of_clubs.svg"
+    cardImage: "images/5_of_clubs.svg"
   },
   {
     cardType: 6,
     cardValue: 6,
     cardSuite: "Clubs",
-    cardImage:"images/6_of_clubs.svg"
+    cardImage: "images/6_of_clubs.svg"
   },
   {
     cardType: 7,
     cardValue: 7,
     cardSuite: "Clubs",
-    cardImage:"images/7_of_clubs.svg"
+    cardImage: "images/7_of_clubs.svg"
   },
   {
     cardType: 8,
     cardValue: 8,
     cardSuite: "Clubs",
-    cardImage:"images/8_of_clubs.svg"
+    cardImage: "images/8_of_clubs.svg"
   },
   {
     cardType: 9,
     cardValue: 9,
     cardSuite: "Clubs",
-    cardImage:"images/9_of_clubs.svg"
+    cardImage: "images/9_of_clubs.svg"
   },
   {
     cardType: 10,
     cardValue: 10,
     cardSuite: "Clubs",
-    cardImage:"images/10_of_clubs.svg"
+    cardImage: "images/10_of_clubs.svg"
   },
   {
     cardType: "Jack",
     cardValue: 10,
     cardSuite: "Clubs",
-    cardImage:"images/jack_of_clubs.svg"
+    cardImage: "images/jack_of_clubs.svg"
   },
   {
     cardType: "Queen",
     cardValue: 10,
     cardSuite: "Clubs",
-    cardImage:"images/queen_of_clubs.svg"
+    cardImage: "images/queen_of_clubs.svg"
   },
   {
     cardType: "King",
     cardValue: 10,
     cardSuite: "Clubs",
-    cardImage:"images/king_of_clubs.svg"
+    cardImage: "images/king_of_clubs.svg"
   },
   {
     cardType: "Ace",
     cardValue: 11,
     cardSuite: "Clubs",
-    cardImage:"images/ace_of_clubs.svg"
+    cardImage: "images/ace_of_clubs.svg"
   },
   {
     cardType: 2,
     cardValue: 2,
     cardSuite: "Spades",
-    cardImage:"images/2_of_spades.svg"
+    cardImage: "images/2_of_spades.svg"
   },
   {
     cardType: 3,
     cardValue: 3,
     cardSuite: "Spades",
-    cardImage:"images/3_of_spades.svg"
+    cardImage: "images/3_of_spades.svg"
   },
   {
     cardType: 4,
     cardValue: 4,
     cardSuite: "Spades",
-    cardImage:"images/4_of_spades.svg"
+    cardImage: "images/4_of_spades.svg"
   },
   {
     cardType: 5,
     cardValue: 5,
     cardSuite: "Spades",
-    cardImage:"images/5_of_spades.svg"
+    cardImage: "images/5_of_spades.svg"
   },
   {
     cardType: 6,
     cardValue: 6,
     cardSuite: "Spades",
-    cardImage:"images/6_of_spades.svg"
+    cardImage: "images/6_of_spades.svg"
   },
   {
     cardType: 7,
     cardValue: 7,
     cardSuite: "Spades",
-    cardImage:"images/7_of_spades.svg"
+    cardImage: "images/7_of_spades.svg"
   },
   {
     cardType: 8,
     cardValue: 8,
     cardSuite: "Spades",
-    cardImage:"images/8_of_spades.svg"
+    cardImage: "images/8_of_spades.svg"
   },
   {
     cardType: 9,
     cardValue: 9,
     cardSuite: "Spades",
-    cardImage:"images/9_of_spades.svg"
+    cardImage: "images/9_of_spades.svg"
   },
   {
     cardType: 10,
     cardValue: 10,
     cardSuite: "Spades",
-    cardImage:"images/10_of_spades.svg"
+    cardImage: "images/10_of_spades.svg"
   },
   {
     cardType: "Jack",
     cardValue: 10,
     cardSuite: "Spades",
-    cardImage:"images/jack_of_spades.svg"
+    cardImage: "images/jack_of_spades.svg"
   },
   {
     cardType: "Queen",
     cardValue: 10,
     cardSuite: "Spades",
-    cardImage:"images/queen_of_spades.svg"
+    cardImage: "images/queen_of_spades.svg"
   },
   {
     cardType: "King",
     cardValue: 10,
     cardSuite: "Spades",
-    cardImage:"images/king_of_spades.svg"
+    cardImage: "images/king_of_spades.svg"
   },
   {
     cardType: "Ace",
     cardValue: 11,
     cardSuite: "Spades",
-    cardImage:"images/ace_of_spades.svg"
+    cardImage: "images/ace_of_spades.svg"
   }
 ];
 
@@ -342,7 +342,7 @@ var BlackJack = {
     }
   },
   dealHand: function(){
-
+    BlackJack.reset();
     console.log("Hand Dealt!");
     BlackJack.gameDealt = true;
     AppHelpers.getRandomCard();
@@ -375,26 +375,33 @@ var BlackJack = {
       BlackJack.dealerStage = true;
       BlackJack.showDealerCard();
       setTimeout(function(){ alert("BlackJack! You Win!"); }, 500);
+      BlackJack.gameDealt = false;
     } else if (BlackJack.dealerHand === 21) {
       BlackJack.dealerStage = true;
       BlackJack.showDealerCard();
       setTimeout(function(){ alert("Dealer has BlackJack, you lose."); }, 500);
+      BlackJack.gameDealt = false;
     }
   },
   checkForWin: function() {
     if (BlackJack.dealerStage === true) {
       if (BlackJack.userHand > BlackJack.dealerHand && BlackJack.userHand < 22 && BlackJack.dealerHand > 16) {
         setTimeout(function(){ alert("You Win! Your Score:" + BlackJack.userHand + " Dealer Score:" + BlackJack.dealerHand); }, 500);
+        BlackJack.gameDealt = false;
       } else if (BlackJack.dealerHand > BlackJack.userHand && BlackJack.dealerHand > 16 && BlackJack.dealerHand < 22 && BlackJack.dealerStage === true) {
         setTimeout(function(){ alert("You Lose. Your Score:" + BlackJack.userHand + " Dealer Score:" + BlackJack.dealerHand); }, 500);
+        BlackJack.gameDealt = false;
       } else if (BlackJack.dealerHand === BlackJack.userHand && BlackJack.dealerHand > 16) {
         setTimeout(function(){ alert("Push. Your Score:" + BlackJack.userHand + " Dealer Score:" + BlackJack.dealerHand); }, 500);
+        BlackJack.gameDealt = false;
       }
     }
     if (BlackJack.userHand > 21) {
       setTimeout(function(){alert("Busted! You lose. Your Score:" + BlackJack.userHand + " Dealer Score:" + BlackJack.dealerHand); }, 500);
+      BlackJack.gameDealt = false;
     } else if(BlackJack.dealerHand > 21 && BlackJack.userHand < 22){
       setTimeout(function(){ alert("Dealer busted, you win! Your Score:" + BlackJack.userHand + " Dealer Score:" + BlackJack.dealerHand); }, 500);
+      BlackJack.gameDealt = false;
     }
 
   },
