@@ -329,7 +329,7 @@ var Betting = {
       $('#currentbet').html(Betting.playerBet);
     }
     if (Betting.playerScore === 0) {
-      alert("You are all out of credits! I'll loan you $1000 more, better luck this time!");
+      setTimeout(function(){ alert("You are all out of credits! I'll loan you $1000 more, better luck this time!");}, 750);
       Betting.playerScore = 1000;
       $('#credits').html(Betting.playerScore);
     }
@@ -361,19 +361,9 @@ var BlackJack = {
     var firstCardImage = BlackJack.dealerRandomCards[0].cardImage;
     if (BlackJack.dealerStage === false) {
       $("[data-dealer="+"0"+"]").html(`<img class='card' src='images/fillmurray.jpg'/>`);
-    //   $('#dealercards').first().removeAttr("src");
-    //   $('#dealercards').first().setAttribute('src', 'http://fillmurray.com/84/125');
-    //   console.log(BlackJack.dealerStage);
-    // } else if (BlackJack.dealerStage === true) {
-    //   $('#dealercards').first().attr('src', `${firstCardImage}`);
     }
-    // console.log(firstCardImage);
-
     if (BlackJack.dealerStage === true) {
       $("[data-dealer="+"0"+"]").html(`<img class='card' src='${BlackJack.dealerRandomCards[0].cardImage}'/>`);
-  //     BlackJack.dealerRandomCards[0] = "http://fillmurray.com/125/84";
-  //   } else if (BlackJack.dealerStage === true) {
-  //     BlackJack.dealerRandomCards[0] = firstCardImage;
     }
   },
   dealHand: function(){
@@ -450,8 +440,6 @@ var BlackJack = {
     BlackJack.gameDealt = false;
     BlackJack.dealerStage = false;
     AppHelpers.displayUserScore();
-    // $(".card").empty()
-    // $( ".card").remove();
     $("#dealercards").empty();
     $("#usercards").empty();
   }
@@ -467,23 +455,16 @@ var AppHelpers = {
       BlackJack.userHand = 0;
       for (var i = 0; i < BlackJack.userCardValues.length; i++) {
         BlackJack.userHand += BlackJack.userCardValues[i];
-          // console.log(BlackJack.userHand);
         if(BlackJack.userHand > 21){
           for (var j = 0; j < BlackJack.userCardValues.length; j++) {
             if (BlackJack.userCardValues[j] === 11) {
-              // console.log(BlackJack.userHand);
             BlackJack.userHand -= BlackJack.userCardValues[j];
-              // console.log(BlackJack.userHand);
             BlackJack.userCardValues[j] = 1;
-              // console.log(BlackJack.userHand);
             BlackJack.userHand += BlackJack.userCardValues[j];
-              // console.log(BlackJack.userHand);
             }
           }
         }
       }
-      // BlackJack.userHand += randomCard.cardValue;
-      // $("#usercards").append(`<img class='card' src='${randomCard.cardImage}'/>`);
       var newCard = $('<span>');
       newCard.addClass("cards");
       newCard.attr("data-user", BlackJack.userRandomCards.length - 1);
@@ -495,23 +476,16 @@ var AppHelpers = {
       BlackJack.dealerHand = 0;
       for (var i = 0; i < BlackJack.dealerCardValues.length; i++) {
         BlackJack.dealerHand += BlackJack.dealerCardValues[i];
-          // console.log(BlackJack.userHand);
         if(BlackJack.dealerHand > 21){
           for (var j = 0; j < BlackJack.dealerCardValues.length; j++) {
             if (BlackJack.dealerCardValues[j] === 11) {
-              // console.log(BlackJack.dealerHand);
             BlackJack.dealerHand -= BlackJack.dealerCardValues[j];
-              // console.log(BlackJack.dealerHand);
             BlackJack.dealerCardValues[j] = 1;
-              // console.log(BlackJack.dealerHand);
             BlackJack.dealerHand += BlackJack.dealerCardValues[j];
-              // console.log(BlackJack.dealerHand);
             }
           }
         }
       }
-      // BlackJack.dealerHand += randomCard.cardValue;
-      // $("#dealercards").append(`<img class='card' src='${randomCard.cardImage}'/>`);
       var newCard = $('<span>');
       newCard.addClass("cards");
       newCard.attr("data-dealer", BlackJack.dealerRandomCards.length - 1);
@@ -559,7 +533,6 @@ var AppController = {
   }
 };
 
-//event listeners
 window.onload = function(){
   $('#deal_button').on('click', function(){
     AppController.handleDeal();
