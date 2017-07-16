@@ -11,6 +11,9 @@ body {
   main {
     flex: 1 0 auto;
   }
+#gamble {
+  display: inline;
+}
 .collapsible-header{
 opacity: .75;
 }

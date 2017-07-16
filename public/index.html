@@ -34,22 +34,27 @@
           </li>
         </ul>
       </div>
+    </div>
     <div class="row">
       <div class="buttoncontainer">
         <span class="bettingbuttons">
-        <button type="button" name="button" class="waves-effect waves-light btn-large green" id="add100_button">+100</button>
-        <span> PlaceHolder for gamling data </span>
-        <button type="button" name="button" class="waves-effect waves-light btn-large red" id="subtract100_button">-100</button>
-      </span>
+          <button type="button" name="button" class="waves-effect waves-light btn-large green" id="add100_button">+100</button>
+          <div id="gamble">
+            <h6>Credits: <span id="credits">1000</span></h6>
+            <h6>Current Bet: <span id="currentbet">100</span></h6>
+          </div>
+          <button type="button" name="button" class="waves-effect waves-light btn-large red" id="subtract100_button">-100</button>
+        </span>
       </div>
     </div>
-  </div>
-    <div class="handscontainer">
+
       <div class="container col s4">
         <button type="button" name="button" class="waves-effect waves-light btn-large green" id="deal_button">Deal</button>
         <button type="button" name="button" class="waves-effect waves-light btn-large blue" id="stand_button">Stand</button>
         <button type="button" name="button" class="waves-effect waves-light btn-large red" id="hit_button">Hit</button>
       </div>
+    </div>
+    <div class="handscontainer">
       <span class="handsrow">
           <div class="userhand">
             <div>
@@ -71,7 +76,7 @@
   <footer class="page-footer">
    <div class="footer-copyright">
      <div class="container">
-     © 2017 Copyright                       By: Burns Beaver
+      By: Burns Beaver<br> © 2017 Copyright
      </div>
    </div>
  </footer>
