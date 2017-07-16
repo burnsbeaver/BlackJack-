@@ -17,7 +17,7 @@ Go ahead and play a couple hands of [BlackJack!](http://burns-blackjack.bitballo
 * Atom as my text editor
 * Materialize as a framework
 
-##Features
+## Features
 * 52 card deck that generate random cards
 * Standard BlackJack logic (No splits and doubles)  
 * App controller to control the flow of the game
@@ -26,6 +26,7 @@ Go ahead and play a couple hands of [BlackJack!](http://burns-blackjack.bitballo
 
 ## Future Development
 * Split and double
+* Refactored code! 
 * Removing used cards- Kind of...
 
 ## WireFrame
