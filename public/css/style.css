@@ -12,6 +12,12 @@ body {
     flex: 1 0 auto;
   }
 #gamble {
+  width: 175px;
+  margin: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+.bettingbuttons {
   display: inline;
 }
 .collapsible-header{

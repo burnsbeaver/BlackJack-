@@ -319,11 +319,13 @@ var Betting = {
   add100: function(){
     if (Betting.playerBet < Betting.playerScore) {
       Betting.playerBet += 100;
+      $('#currentbet').html(Betting.playerBet);
     }
   },
   subtract100: function() {
     if (Betting.playerBet > 0) {
       Betting.playerBet -= 100;
+      $('#currentbet').html(Betting.playerBet);
     }
   }
 };
@@ -389,13 +391,15 @@ var BlackJack = {
       BlackJack.dealerStage = true;
       BlackJack.showDealerCard();
       setTimeout(function(){ alert("BlackJack! You Win!"); }, 500);
-      Betting.playerScore -= Betting.playerBet;
+      Betting.playerScore += Betting.playerBet;
+      $('#credits').html(Betting.playerScore);
       BlackJack.gameDealt = false;
     } else if (BlackJack.dealerHand === 21) {
       BlackJack.dealerStage = true;
       BlackJack.showDealerCard();
       setTimeout(function(){ alert("Dealer has BlackJack, you lose."); }, 500);
-      Betting.playerScore += Betting.playerBet;
+      Betting.playerScore -= Betting.playerBet;
+      $('#credits').html(Betting.playerScore);
       BlackJack.gameDealt = false;
     }
   },
@@ -404,10 +408,12 @@ var BlackJack = {
       if (BlackJack.userHand > BlackJack.dealerHand && BlackJack.userHand < 22 && BlackJack.dealerHand > 16) {
         setTimeout(function(){ alert("You Win! Your Score:" + BlackJack.userHand + " Dealer Score:" + BlackJack.dealerHand); }, 500);
         Betting.playerScore += Betting.playerBet;
+        $('#credits').html(Betting.playerScore);
         BlackJack.gameDealt = false;
       } else if (BlackJack.dealerHand > BlackJack.userHand && BlackJack.dealerHand > 16 && BlackJack.dealerHand < 22 && BlackJack.dealerStage === true) {
         setTimeout(function(){ alert("You Lose. Your Score:" + BlackJack.userHand + " Dealer Score:" + BlackJack.dealerHand); }, 500);
         Betting.playerScore -= Betting.playerBet;
+        $('#credits').html(Betting.playerScore);
         BlackJack.gameDealt = false;
       } else if (BlackJack.dealerHand === BlackJack.userHand && BlackJack.dealerHand > 16) {
         setTimeout(function(){ alert("Push. Your Score:" + BlackJack.userHand + " Dealer Score:" + BlackJack.dealerHand); }, 500);
@@ -417,10 +423,12 @@ var BlackJack = {
     if (BlackJack.userHand > 21) {
       setTimeout(function(){alert("Busted! You lose. Your Score:" + BlackJack.userHand + " Dealer Score:" + BlackJack.dealerHand); }, 500);
       Betting.playerScore -= Betting.playerBet;
+      $('#credits').html(Betting.playerScore);
       BlackJack.gameDealt = false;
     } else if(BlackJack.dealerHand > 21 && BlackJack.userHand < 22){
-      Betting.playerScore += Betting.playerBet;
       setTimeout(function(){ alert("Dealer busted, you win! Your Score:" + BlackJack.userHand + " Dealer Score:" + BlackJack.dealerHand); }, 500);
+      Betting.playerScore += Betting.playerBet;
+      $('#credits').html(Betting.playerScore);
       BlackJack.gameDealt = false;
     }
 
