@@ -324,6 +324,15 @@ var Betting = {
   playerLose: function(){
     Betting.playerScore -= Betting.playerBet;
     $('#credits').html(Betting.playerScore);
+    if (Betting.playerScore < Betting.playerBet) {
+      Betting.playerBet = Betting.playerScore;
+      $('#currentbet').html(Betting.playerBet);
+    }
+    if (Betting.playerScore === 0) {
+      alert("You are all out of credits! I'll loan you $1000 more, better luck this time!");
+      Betting.playerScore = 1000;
+      $('#credits').html(Betting.playerScore);
+    }
     BlackJack.gameDealt = false;
   },
   add100: function(){
