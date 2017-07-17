@@ -26,9 +26,9 @@ Go ahead and play a couple hands of [BlackJack!](http://burns-blackjack.bitballo
 
 ## Future Development
 * Split and double
-* Refactored code! 
+* Refactored code!
 * Removing used cards- Kind of...
 
 ## WireFrame
-![WireFrame](/public/images/Project1WireFrame)
+![WireFrame](/public/images/Project1WireFrame.png?raw=true)
 #Thank You!
