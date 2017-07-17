@@ -31,4 +31,5 @@ Go ahead and play a couple hands of [BlackJack!](http://burns-blackjack.bitballo
 
 ## WireFrame
 ![WireFrame](/public/images/Project1WireFrame.png?raw=true)
-#Thank You!
+
+# Thank You!
