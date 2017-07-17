@@ -477,14 +477,14 @@ var AppHelpers = {
       BlackJack.dealerRandomCards.push(randomCard);
       BlackJack.dealerCardValues.push(randomCard.cardValue);
       BlackJack.dealerHand = 0;
-      for (var i = 0; i < BlackJack.dealerCardValues.length; i++) {
-        BlackJack.dealerHand += BlackJack.dealerCardValues[i];
+      for (var v = 0; v < BlackJack.dealerCardValues.length; v++) {
+        BlackJack.dealerHand += BlackJack.dealerCardValues[v];
         if(BlackJack.dealerHand > 21){
-          for (var j = 0; j < BlackJack.dealerCardValues.length; j++) {
-            if (BlackJack.dealerCardValues[j] === 11 && BlackJack.dealerHand > 21) {
-            BlackJack.dealerHand -= BlackJack.dealerCardValues[j];
-            BlackJack.dealerCardValues[j] = 1;
-            BlackJack.dealerHand += BlackJack.dealerCardValues[j];
+          for (var p = 0; p < BlackJack.dealerCardValues.length; p++) {
+            if (BlackJack.dealerCardValues[p] === 11 && BlackJack.dealerHand > 21) {
+            BlackJack.dealerHand -= BlackJack.dealerCardValues[p];
+            BlackJack.dealerCardValues[p] = 1;
+            BlackJack.dealerHand += BlackJack.dealerCardValues[p];
             }
           }
         }
@@ -519,17 +519,14 @@ var AppController = {
     }
   },
   handleReset: function(){
-    console.log("Reset works");
     BlackJack.reset();
   },
   handleAdd: function(){
-    console.log("addition works");
     if (BlackJack.gameDealt === false) {
       Betting.add100();
     }
   },
   handleSubtract: function(){
-    console.log("subtraction works");
     if (BlackJack.gameDealt === false) {
       Betting.subtract100();
     }
