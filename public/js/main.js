@@ -454,6 +454,11 @@ var AppHelpers = {
     if (BlackJack.dealerStage === false) {
       BlackJack.userRandomCards.push(randomCard);
       BlackJack.userCardValues.push(randomCard.cardValue);
+      var newCard = $('<span>');
+      newCard.addClass("cards");
+      newCard.attr("data-user", BlackJack.userRandomCards.length - 1);
+      newCard.html(`<img class='card' src='${randomCard.cardImage}'/>`);
+      $('#usercards').append(newCard);
       BlackJack.userHand = 0;
       for (var i = 0; i < BlackJack.userCardValues.length; i++) {
         BlackJack.userHand += BlackJack.userCardValues[i];
@@ -468,14 +473,14 @@ var AppHelpers = {
           }
         }
       }
-      var newCard = $('<span>');
-      newCard.addClass("cards");
-      newCard.attr("data-user", BlackJack.userRandomCards.length - 1);
-      newCard.html(`<img class='card' src='${randomCard.cardImage}'/>`);
-      $('#usercards').append(newCard);
     } else if (BlackJack.dealerStage === true) {
       BlackJack.dealerRandomCards.push(randomCard);
       BlackJack.dealerCardValues.push(randomCard.cardValue);
+      var newCard = $('<span>');
+      newCard.addClass("cards");
+      newCard.attr("data-dealer", BlackJack.dealerRandomCards.length - 1);
+      newCard.html(`<img class='card' src='${randomCard.cardImage}'/>`);
+      $('#dealercards').append(newCard);
       BlackJack.dealerHand = 0;
       for (var v = 0; v < BlackJack.dealerCardValues.length; v++) {
         BlackJack.dealerHand += BlackJack.dealerCardValues[v];
@@ -489,11 +494,6 @@ var AppHelpers = {
           }
         }
       }
-      var newCard = $('<span>');
-      newCard.addClass("cards");
-      newCard.attr("data-dealer", BlackJack.dealerRandomCards.length - 1);
-      newCard.html(`<img class='card' src='${randomCard.cardImage}'/>`);
-      $('#dealercards').append(newCard);
     }
   },
   displayUserScore: function(){
