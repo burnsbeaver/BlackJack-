@@ -490,6 +490,7 @@ var AppHelpers = {
             BlackJack.dealerHand -= BlackJack.dealerCardValues[p];
             BlackJack.dealerCardValues[p] = 1;
             BlackJack.dealerHand += BlackJack.dealerCardValues[p];
+            return;
             }
           }
         }
